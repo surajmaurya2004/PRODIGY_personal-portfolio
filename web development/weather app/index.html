@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Offline Weather App</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    input {
+      padding: 10px;
+      width: 80%;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #2980b9;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 20px;
+    }
+    .temp {
+      font-size: 36px;
+      font-weight: bold;
+    }
+    .condition {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Offline Weather App</h2>
+    <input type="text" id="cityInput" placeholder="Enter City Name">
+    <button onclick="getWeather()">Check Weather</button>
+
+    <div class="result" id="weatherResult" style="display:none;">
+      <div class="temp" id="temp"></div>
+      <div class="condition" id="condition"></div>
+    </div>
+  </div>
+
+  <script>
+    const weatherConditions = ["Sunny ☀️", "Cloudy ☁️", "Rainy 🌧️", "Stormy ⛈️", "Windy 💨", "Foggy 🌫️"];
+
+    function getWeather() {
+      const city = document.getElementById("cityInput").value.trim();
+      if (city === "") {
+        alert("Please enter a city name.");
+        return;
+      }
+
+      // Generate fake weather data
+      const temp = Math.floor(Math.random() * 35) + 5; // between 5°C to 40°C
+      const condition = weatherConditions[Math.floor(Math.random() * weatherConditions.length)];
+
+      // Display
+      document.getElementById("temp").textContent = `${temp}°C in ${city}`;
+      document.getElementById("condition").textContent = condition;
+      document.getElementById("weatherResult").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

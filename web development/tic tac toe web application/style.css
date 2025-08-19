@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0f, #1a1a1f);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #00f7ff;
+  text-shadow: 0 0 15px #00f7ff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 15px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(145deg, #2c2c34, #1b1b21);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffe1;
+}
+
+.cell.X {
+  color: #ff3c98;
+  text-shadow: 0 0 10px #ff3c98;
+}
+
+.cell.O {
+  color: #6bfaff;
+  text-shadow: 0 0 10px #6bfaff;
+}
+
+#status {
+  font-size: 18px;
+  margin: 15px 0;
+  color: #ddd;
+}
+
+#resetBtn {
+  padding: 10px 20px;
+  background: #00f7ff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,255,255,0.3);
+  transition: background 0.3s ease;
+}
+
+#resetBtn:hover {
+  background: #00e1e1;
+}
